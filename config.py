@@ -5,7 +5,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
-BOT_USERNAME = 'REx'
+BOT_USERNAME = 'Link_sharex_vbot'
 APP_ID = int(os.environ.get("APP_ID", "28891870"))
 API_HASH = os.environ.get("API_HASH", "ffc3794690bf254d2867ac58fd293a60")
 OWNER_ID = int(os.environ.get("OWNER_ID", "7660990923"))
