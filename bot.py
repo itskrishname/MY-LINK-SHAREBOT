@@ -12,7 +12,7 @@ from aiohttp import web
 pyrogram.utils.MIN_CHANNEL_ID = -1002449417637
 
 name = """
-Link share bot started ✨ Credit:- @RexBots_Official
+Link share bot started ✨ Credit:- @Lord_Vasudev_Krishna
 """
 
 class Bot(Client):
