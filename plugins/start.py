@@ -60,7 +60,7 @@ def check_fsub(func):
                 return False
 
         async def is_subscribed(client, user_id):
-            channel_ids = await Seishiro.show_channels()
+            channel_ids = await Seishiro.get_fsub_channels()
             if not channel_ids:
                 return True
             if user_id == OWNER_ID:
@@ -106,7 +106,7 @@ async def not_joined(client: Client, message: Message):
     count = 0
 
     try:
-        all_channels = await Seishiro.show_channels()
+        all_channels = await Seishiro.get_fsub_channels()
         for chat_id in all_channels:
             await message.reply_chat_action(ChatAction.TYPING)
 
@@ -163,7 +163,7 @@ async def not_joined(client: Client, message: Message):
                 except Exception as e:
                     logger.error(f"Error with chat {chat_id}: {e}")
                     await temp.edit(
-                        f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @Lord_Vasudev_Krishna</i></b>\n"
+                        f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @seishiro_obito</i></b>\n"
                         f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
                     )
                     return
@@ -190,7 +190,7 @@ async def not_joined(client: Client, message: Message):
     except Exception as e:
         logger.error(f"Final Error in not_joined: {e}")
         await temp.edit(
-            f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @Lord_Vasudev_Krishna</i></b>\n"
+            f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @seishiro_obito</i></b>\n"
             f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
         )
     
@@ -203,7 +203,7 @@ async def start_command(client: Bot, message: Message):
     user = await Seishiro.is_user_banned(user_id)
     if user:
         keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ...!!", url="https://t.me/Lord_Vasudev_Krishna")]]
+            [[InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ...!!", url="https://t.me/rexbots_official")]]
         )
         return await message.reply_text(
             "Wᴛғ ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ʙʏ ᴏᴜʀ ᴀᴅᴍɪɴ/ᴏᴡɴᴇʀ . Iғ ʏᴏᴜ ᴛʜɪɴᴋs ɪᴛ's ᴍɪsᴛᴀᴋᴇ ᴄʟɪᴄᴋ ᴏɴ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ...!!",
